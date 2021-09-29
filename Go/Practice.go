@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-func main()  {
- fmt.Println("HelloWorld")
-  x := [...]int{1,2,3}
+func main() {
+	fmt.Println("HelloWorld")
+	x := [...]int{1, 2, 3}
 	var y = [3]int{1, 2, 3}
 	fmt.Println(x == y)
-	fmt.Println(x==y)
-	var zSlice = make([]int,5)
-	var zSliceWithCap = make([]int,0,10)
-	fmt.Println("zSlice" , len(zSlice))
-	fmt.Println("zSlice",append(zSlice,2),append(zSliceWithCap,2))
-	fmt.Println("zSlice cap",cap(zSlice),cap(zSliceWithCap))
+	fmt.Println(x == y)
+	var zSlice = make([]int, 5)
+	var zSliceWithCap = make([]int, 0, 10)
+	fmt.Println("zSlice", len(zSlice))
+	fmt.Println("zSlice", append(zSlice, 2), append(zSliceWithCap, 2))
+	fmt.Println("zSlice cap", cap(zSlice), cap(zSliceWithCap))
 	fmt.Println(x[1:])
 	ax := []int{1, 2, 3, 4}
 	num := copy(ax[:3], ax[1:])
@@ -21,27 +21,27 @@ func main()  {
 	var s2 string = s[4:7]
 	fmt.Println(s2)
 	fmt.Println(s[:7])
+	//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
+	fmt.Println(s)
 
 	totWins := map[string]int{
-		"Oracs":1,
-		"Sharks":2,
-
+		"Oracs":  1,
+		"Sharks": 2,
 	}
-	fmt.Println(len(totWins),totWins)
+	fmt.Println(len(totWins), totWins)
 	totWins["Oracs"]++
 	fmt.Println(totWins["Oracs"])
 	i, ok := totWins["Orac"]
-	fmt.Println(i,ok)
+	fmt.Println(i, ok)
 
 	if ok {
 		fmt.Println("Its true")
-	}else {
+	} else {
 		fmt.Println("Its false")
 	}
 
-
-	for k,v := range "totWins" {
-		fmt.Println(k,string(v))
+	for k, v := range "totWins" {
+		fmt.Println(k, string(v))
 	}
 	words := []string{"a", "cow", "smile", "gopher",
 		"octopus", "anthropologist"}
