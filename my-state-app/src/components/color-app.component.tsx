@@ -2,15 +2,14 @@ import React, {useState} from "react";
 import colorData from "../data/color-data.json"
 import ColorList from "./colorList.component";
 
-interface color {
+export interface IColor {
     id:string,
     title:string,
     color:string,
     rating:number
-}{colorData}
+}
+export const colorDat: IColor[] = []
 export default function ColorApp(){
-
-    const [colors,setColorData] = useState(colorData);
-
+    const [colors] = useState(colorData);
     return <ColorList colors={colors} />;
 }
