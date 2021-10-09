@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import StarRating from "./components/star-rating.component";
 import ColorApp from "./components/color-app.component";
 
 ReactDOM.render(
     <React.StrictMode>
-        <StarRating style={{backgroundColor: "lightblue"}}/>
         <ColorApp/>
     </React.StrictMode>,
     document.getElementById('root')
