@@ -1,14 +1,16 @@
 import React from "react";
 import Color from "./color.component";
-import {colorDat} from "./color-app.component";
+import {colorDat, IColor} from "./color-app.component";
 
 
-export default function ColorList({colors=colorDat,onRemoveColor=(id:string)=>{console.log(id)}}) {
+export default function ColorList({colors = colorDat, onRemoveColor, onRateColor}:
+                                      { colors: IColor[], onRemoveColor: (id: string) => void, onRateColor: (id: string, rating: number) => void }) {
 
     if (!colors.length) return <div>No color found</div>;
     return (
         <div>
-            {colors.map(color => <Color onRemove={onRemoveColor} key={color.color} {...color} />)}
+            {colors.map(color => <Color onRemove={onRemoveColor} onRate={(id,rating)=> onRateColor(id,rating)}
+                                        key={color.color} {...color} />)}
         </div>
     )
 }

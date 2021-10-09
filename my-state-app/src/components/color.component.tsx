@@ -7,8 +7,9 @@ export default function Color({
                                   title,
                                   color,
                                   rating,
-                                  onRemove
-                              }: { id: string, title: string, color: string, rating: number, onRemove: (f: string) => void }) {
+                                  onRemove,
+                                  onRate
+                              }: { id: string, title: string, color: string, rating: number, onRemove: (f: string) => void, onRate: (f: string, rating: number) => void }) {
     return (
         <section>
             <h1>{title}</h1>
@@ -16,7 +17,8 @@ export default function Color({
                 <FaTrash/>
             </button>
             <div style={{height: 50, backgroundColor: color}}/>
-            <StarRating selectedStars={rating}/>
+            <StarRating totalStars={5} selectedStars={rating}
+                        onRate={rating => onRate(id,rating)}/>
         </section>
     );
 
